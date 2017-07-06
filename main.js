@@ -89,7 +89,7 @@
                 $(document).ready(function() {
                 //function2
                 //jab window.load run karega jab hi vo current time show karega
-               // $('#songs').Datatable();
+              // $('#songs').Datatables();
             updateCurrentTime();
             // here we set the intervals for  song when it will play
             setInterval(function() {
