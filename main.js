@@ -85,17 +85,17 @@
                                 });
                  }
       // window load matlab jab hamara web page load ho jab function call karna
-            // window.onload = function() {
-                $(document).ready(function() {
+            window.onload = function() {
+            //    $(document).ready(function() {
                 //function2
                 //jab window.load run karega jab hi vo current time show karega
-              // $('#songs').Datatables();
-            updateCurrentTime();
-            // here we set the intervals for  song when it will play
-            setInterval(function() {
-                updateCurrentTime();
-                // here we have given the time intervak for 1 sec :(1sec=1000milisecond)
-            },1000);
+                     
+                    updateCurrentTime();
+                    // here we set the intervals for  song when it will play
+                    setInterval(function() {
+                        updateCurrentTime();
+                        // here we have given the time intervak for 1 sec :(1sec=1000milisecond)
+                    },1000);
                   
                  
                     // var songName1= 'Tamma Tamma song';
@@ -126,28 +126,52 @@
                        },
                         {
                            'name': 'Humma Humma song',
-                            'artist' : 'Neha kakkar, Monali Thakur , Ikka Singh' ,
-                            'album': 'Badrinath Ki Dulhania',
-                            'duration': '2:56' ,
+                            'artist' : 'Badshah ,Jubin nautiyal, shasha tripathi' ,
+                            'album': 'ok Jannu',
+                            'duration': '3:15' ,
                              'fileNames': 'song2.mp3',
                              'image': 'song 2.jpg'
                        },
                         {
                            'name': 'Nashe Si Chad Gayi',
-                            'artist' : 'Neha kakkar, Monali Thakur , Ikka Singh' ,
-                            'album': 'Badrinath Ki Dulhania',
-                            'duration': '2:56' ,
+                            'artist' : 'Arijit singh' ,
+                            'album': 'Befikre',
+                            'duration': '2:34' ,
                              'fileNames': 'song3.mp3',
                              'image': 'song 3.jpg'
                        },
                         
                         {
                            'name': 'The Breakup Song',
-                            'artist' : 'Neha kakkar, Monali Thakur , Ikka Singh' ,
-                            'album': 'Badrinath Ki Dulhania',
-                            'duration': '2:56' ,
+                            'artist' : 'Nakash Aziz,Arijit singh,Badshah ,jonita gandhi' ,
+                            'album': 'Ae dil hain mushkil',
+                            'duration': '2:29' ,
                              'fileNames': 'song4.mp3',
                              'image': 'song 4.jpg'
+                       },
+                       {
+                           'name': 'Patola',
+                            'artist' : 'Arijit singh' ,
+                            'album': 'Befikre',
+                            'duration': '2:34' ,
+                             'fileNames': 'song5.mp3',
+                             'image': 'song 3.jpg'
+                       },
+                       {
+                           'name': 'Without You',
+                            'artist' : 'David Guetta' ,
+                            'album': 'Befikre',
+                            'duration': '2:34' ,
+                             'fileNames': 'song6.mp3',
+                             'image': 'song 3.jpg'
+                       },
+                       {
+                           'name': 'Right Now',
+                            'artist' : 'Akon ' ,
+                            'album': 'Befikre',
+                            'duration': '3:12' ,
+                             'fileNames': 'song7.mp3',
+                             'image': 'song 3.jpg'
                        }]                       
                     for(var i=0; i< songs.length; i++) {
                         var obj= songs[i]; //idhar humne ek variable bana diya 'obj' naam ka usme humne songs wali array file ko store kar diya
@@ -225,7 +249,10 @@
                 //          togglesong();
                 //       }
                 //   });
-            });
+                $('#songs').DataTable({
+                         paging: false
+                     });
+            }
            
            
             
