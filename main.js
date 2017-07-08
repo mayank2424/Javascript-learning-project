@@ -68,8 +68,11 @@
         //                 }
         //           });
         // }
+        var currentSongNumber=1;
+        var willLoop=0;
+        var willShuffle=0;
                  var songNumber =1;
-                 function addSongNameClickEvent(songObj,position) {
+            function addSongNameClickEvent(songObj,position) {
                                 var songName= songObj.fileNames
                                 var id="#song" + position;
                                 $(id).click(function() {
@@ -84,8 +87,73 @@
                                         togglesong();
                                 });
                  }
+                 
+                        function timeJump() {
+                         var  song=document.querySelector('audio');
+                         song.currentTime = song.duration-5;
+
+                        }
+                 var songs =[{   //basically here we have stored objects in array 
+                           'name': 'Tamma Tamma song',
+                            'artist' : 'Neha kakkar, Monali Thakur , Ikka Singh' ,
+                            'album': 'Badrinath Ki Dulhania',
+                            'duration': '2:56',
+                            'fileNames': 'song1.mp3',
+                            'image': 'song1.jpg'
+                       },
+                        {
+                           'name': 'Humma Humma song',
+                            'artist' : 'Badshah ,Jubin nautiyal, shasha tripathi' ,
+                            'album': 'ok Jannu',
+                            'duration': '3:15' ,
+                             'fileNames': 'song2.mp3',
+                             'image': 'song 2.jpg'
+                       },
+                        {
+                           'name': 'Nashe Si Chad Gayi',
+                            'artist' : 'Arijit singh' ,
+                            'album': 'Befikre',
+                            'duration': '2:34' ,
+                             'fileNames': 'song3.mp3',
+                             'image': 'song 3.jpg'
+                       },
+                        
+                        
+                       {
+                           'name': 'Patola',  
+                            'artist' : 'Bohemia' ,
+                            'album': 'Patola',
+                            'duration': '3:28' ,
+                             'fileNames': 'song5.mp3',
+                             'image': 'song5.jpg'
+                       },
+                       {
+                           'name': 'The Breakup Song',
+                            'artist' : 'Nakash Aziz,Arijit singh,Badshah ,jonita gandhi' ,
+                            'album': 'Ae dil hain mushkil',
+                            'duration': '2:29' ,
+                             'fileNames': 'song4.mp3',
+                             'image': 'song 4.jpg'
+                       },
+                       {
+                           'name': 'Without You',
+                            'artist' : 'David Guetta' ,
+                            'album': 'Befikre',
+                            'duration': '2:34' ,
+                             'fileNames': 'song6.mp3',
+                             'image': 'song 3.jpg'
+                       },
+                       {
+                           'name': 'Right Now',
+                            'artist' : 'Akon ' ,
+                            'album': 'Befikre',
+                            'duration': '3:12' ,
+                             'fileNames': 'song7.mp3',
+                             'image': 'song 3.jpg'
+                       }]                       
       // window load matlab jab hamara web page load ho jab function call karna
             window.onload = function() {
+                changeCurrentSongDetails(songs[0]);
             //    $(document).ready(function() {
                 //function2
                 //jab window.load run karega jab hi vo current time show karega
@@ -116,63 +184,7 @@
                     //METHOD 1
                     // var albumList=["Badrinath ki dulhania" , "Ok jaanu" , "Befikre" , "Ae dil hain mushkil"]
                     //    var duration=["2:56" , "3:15" ,"2:34" ,"2:29"]
-                       var songs =[{   //basically here we have stored objects in array 
-                           'name': 'Tamma Tamma song',
-                            'artist' : 'Neha kakkar, Monali Thakur , Ikka Singh' ,
-                            'album': 'Badrinath Ki Dulhania',
-                            'duration': '2:56',
-                            'fileNames': 'song1.mp3',
-                            'image': 'song1.jpg'
-                       },
-                        {
-                           'name': 'Humma Humma song',
-                            'artist' : 'Badshah ,Jubin nautiyal, shasha tripathi' ,
-                            'album': 'ok Jannu',
-                            'duration': '3:15' ,
-                             'fileNames': 'song2.mp3',
-                             'image': 'song 2.jpg'
-                       },
-                        {
-                           'name': 'Nashe Si Chad Gayi',
-                            'artist' : 'Arijit singh' ,
-                            'album': 'Befikre',
-                            'duration': '2:34' ,
-                             'fileNames': 'song3.mp3',
-                             'image': 'song 3.jpg'
-                       },
-                        
-                        {
-                           'name': 'The Breakup Song',
-                            'artist' : 'Nakash Aziz,Arijit singh,Badshah ,jonita gandhi' ,
-                            'album': 'Ae dil hain mushkil',
-                            'duration': '2:29' ,
-                             'fileNames': 'song4.mp3',
-                             'image': 'song 4.jpg'
-                       },
-                       {
-                           'name': 'Patola',
-                            'artist' : 'Arijit singh' ,
-                            'album': 'Befikre',
-                            'duration': '2:34' ,
-                             'fileNames': 'song5.mp3',
-                             'image': 'song 3.jpg'
-                       },
-                       {
-                           'name': 'Without You',
-                            'artist' : 'David Guetta' ,
-                            'album': 'Befikre',
-                            'duration': '2:34' ,
-                             'fileNames': 'song6.mp3',
-                             'image': 'song 3.jpg'
-                       },
-                       {
-                           'name': 'Right Now',
-                            'artist' : 'Akon ' ,
-                            'album': 'Befikre',
-                            'duration': '3:12' ,
-                             'fileNames': 'song7.mp3',
-                             'image': 'song 3.jpg'
-                       }]                       
+                       
                     for(var i=0; i< songs.length; i++) {
                         var obj= songs[i]; //idhar humne ek variable bana diya 'obj' naam ka usme humne songs wali array file ko store kar diya
                        var name="#song" + (i+1);
@@ -252,6 +264,40 @@
                 $('#songs').DataTable({
                          paging: false
                      });
+
+                    $('audio').on('ended',function() {
+                            var audio = document.querySelector('audio');
+                            if(currentSongNumber < 7) {
+                                // Play the next song 
+                            var nextSongObj = songs[currentSongNumber];
+                            audio.src = nextSongObj.fileNames; // Change Soure
+                            togglesong(); // Play Next Song
+                            changeCurrentSongDetails(nextSongObj); // Update Image
+                            currentSongNumber = currentSongNumber + 1; // Change state
+                            }
+                            else {
+                                // Stop Playing
+                                $('.play-icon').removeClass('fa-pause').addClass('fa-play')
+                                audio.currentTime=0;
+                            }
+                        });
+                     $('.fa-repeat').on('click' ,function() {
+                         $('.fa-repeat').toggleClass('disabled');
+                        //    $('.fa-random').toggleClass('disabled');
+                         willLoop= 1-willLoop;
+                        //  willShuffle= 1-willShuffle; 
+                     });
+                    //  var  song= $('audio');
+                    //  if(currentSongNumber < 4) {
+                    //      var audio=document.querySelector('audio');
+                    //      song.currentTime=song.duration;
+                    //  }
+                    //      else {
+
+                    //      }
+                         
+                     
+
             }
            
            
@@ -271,11 +317,18 @@
         //function calling
        togglesong();
     });
-    $('body').on('keypress', function(event) {
-                if (event.keyCode == 32) {
+    $('body').on('keypress', function(event) { //Here we have made object like thing(curly brackets hain na )
+        console.log(event);
+                 var target=event.target; // idhar humne target tag ki value ko store kara diya
+                if (event.keyCode == 32 && target.tagName!= "INPUT") { //here && means and (means both statement should be right)
                     //function call karo
                    togglesong();
                 }
             });
            
-           
+        //  $('.input').on('click' , function(event) {
+        //      if(event.keycode== 32){
+
+        //      }
+
+        //  });

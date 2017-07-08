@@ -42,6 +42,8 @@ h1 {
     background-color: #1f1f1f;
 }
 
+
+
 .main header {
     height: 80px;
     background-color: #282828;
@@ -65,13 +67,18 @@ h1 {
     font-size: 1.5rem;
     justify-content: center;
     align-items: center;
-    border:  1px solid white;
+    /*border:  1px solid white;*/
    
-    margin: 1px 660px;
+    /*margin: 1px 660px;
     padding: 7px 6px 7px 10px;
-    border-radius: 50%;
+    border-radius: 50%;*/
 }
-
+#songs{
+    margin-right: -180px;
+}
+.current-song-wrapper {
+    margin-left: -230px;
+}
 
 .hidden {
     display: none;
@@ -96,13 +103,20 @@ h1 {
     align-items: center;
 }
 
+.player-buttons i {
+    margin-right: 2rem;
+}
+
+.fa.disabled {
+    color: gray;
+}
 .progress-wrapper span {
     color: #959595;
 }
 
 .player-progress {
     height: 8px;
-    width: 500px;
+    width: 700px;
     background-color: #3d3d3d;
     border-radius: 4px;
     margin-right: 6px;
@@ -184,6 +198,7 @@ h1 {
     height: 100px;
     width: 100px;
     margin-right: 1rem;
+
 }
 
 .current-song-name {
@@ -192,7 +207,8 @@ h1 {
     margin-bottom: 0;
 }
 
-.current-song-album {
+
+.current-song-album{
     margin-top: 0.4rem;
 }
 table.dataTable tbody tr {
@@ -205,19 +221,23 @@ table.dataTable tbody tr {
 #songs_filter {
     color: white;
     margin-left: 300px;
-    margin-right: -245px;
 }
 #songs_filter input {
     width: 200px;
     border-radius: 12px;
     margin-bottom: 1rem;
     font-size: 16px;
+    margin-right: -180px;
 
 }
-#songs_filter input onclick{
+/*#songs_filter input onclick{
     text-decoration :none;
-}
+}*/
 .dataTables-wrapper {
     margin-top: -25px;
 }
-        
+
+.list-headers  tr > td {
+    background-color: #322682;
+    /*border-radius: 40px;*/
+}
