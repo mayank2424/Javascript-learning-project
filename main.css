@@ -21,7 +21,7 @@ h1 {
 .wrapper {
     height: 100%;
     width: 100%;
-    background-color: #BBB;
+    background-color:#BBB;
 }
 
 .welcome-screen {
@@ -42,18 +42,23 @@ h1 {
     background-color: #1f1f1f;
 }
 
+.main > .navbar-default {
+      background-color: #1f1f1f;
+}
 
-
-.main header {
+/*.main header {
     height: 80px;
     background-color: #282828;
     padding: 1rem;
     color: #FFF;
-}
+}*/
 
 .main .content {
     flex:1;
     background-color: #1f1f1f;
+}
+#Heading > a {
+    color: red;
 }
 
 .main footer {
@@ -67,6 +72,7 @@ h1 {
     font-size: 1.5rem;
     justify-content: center;
     align-items: center;
+    font-size: 20px;
     /*border:  1px solid white;*/
    
     /*margin: 1px 660px;
@@ -74,7 +80,7 @@ h1 {
     border-radius: 50%;*/
 }
 #songs{
-    margin-right: -180px;
+    margin-right: -250px;
 }
 .current-song-wrapper {
     margin-left: -230px;

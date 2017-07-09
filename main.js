@@ -51,7 +51,10 @@
         duration= fancyTimeFormat(duration);
         $('.time-elapsed').text(currentTime);
         $('.song-duration').text(duration);
-        }
+    }
+      function changeNextSongClickEvent() {
+
+      }
         //addSongNameClickEvent(fileName[0]);
         // addSongNameClickEvent(fileNames[0],1);
         // function addSongNameClickEvent(songName ,position) {
@@ -68,6 +71,7 @@
         //                 }
         //           });
         // }
+        var currentSongPlaying=1;
         var currentSongNumber=1;
         var willLoop=0;
         var willShuffle=0;
@@ -87,7 +91,7 @@
                                         togglesong();
                                 });
                  }
-                 
+                   
                         function timeJump() {
                          var  song=document.querySelector('audio');
                          song.currentTime = song.duration-5;
@@ -280,6 +284,25 @@
                                 $('.play-icon').removeClass('fa-pause').addClass('fa-play')
                                 audio.currentTime=0;
                             }
+                        });
+
+                        $('.fa-step-forward').on('click' , function() {
+                            console.log('nextsong');
+                            var nextSong= songs[currentSongPlaying];
+                            var audio =document.querySelector('audio');
+                            audio.src=  nextSong.fileNames;
+                            togglesong();
+                            changeCurrentSongDetails(nextSong);
+                            currentSongPlaying = currentSongPlaying+1;
+                        });
+                        $('.fa-step-backward').on('click' , function() {
+                            console.log('nextsong');
+                            var previousSong= songs[currentSongPlaying];
+                            var audio =document.querySelector('audio');
+                            audio.src=  previousSong.fileNames;
+                            togglesong();
+                            changeCurrentSongDetails(previousSong);
+                            currentSongPlaying = currentSongPlaying -1;
                         });
                      $('.fa-repeat').on('click' ,function() {
                          $('.fa-repeat').toggleClass('disabled');

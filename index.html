@@ -7,11 +7,9 @@
     <link rel="stylesheet" type="text/css" href="font-awesome.css">
  <link rel="stylesheet"  type="text/css" href="https://cdn.datatables.net/1.10.15/css/jquery.dataTables.min.css">
     <link rel="stylesheet" type="text/css" href="main.css">
+    <link rel="stylesheet" type="text/css" href="assets/css/bootstrap.css">
     <style>
-        h1 {
-            text-align: center;
-            color:orangered
-        }
+        
     </style>
 </head>
 
@@ -26,11 +24,47 @@
             </div>
         </section>
         <div class="main">
-            <header>
-                <div class="right floated user-name"> </div>
-                <h1> SONGIFY</h1>
+        
+           <nav class="navbar navbar-default">
+            <div class="container-fluid">
+            <!-- Brand and toggle get grouped for better mobile display -->
+            <div class="navbar-header">
+            <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1" aria-expanded="false">
+                <span class="sr-only">Toggle navigation</span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+            </button>
+            <div id="Heading">
+            <a class="navbar-brand" href="#">Songify</a>
+         </div>
+       </div>
 
-            </header>
+      <!-- Collect the nav links, forms, and other content for toggling -->
+      <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+      <ul class="nav navbar-nav">
+        <li><a href="#">Browse</a></li>
+        <li><a href="#">My Music</a></li>
+        
+      </ul>
+     
+      <ul class="nav navbar-nav navbar-right">
+        <li><a href="#">Login/Sign Up</a></li>
+        <!--<li class="dropdown">
+          <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Dropdown <span class="caret"></span></a>
+          <ul class="dropdown-menu">
+            <li><a href="#">Action</a></li>
+            <li><a href="#">Another action</a></li>
+            <li><a href="#">Something else here</a></li>
+            <li role="separator" class="divider"></li>
+            <li><a href="#">Separated link</a></li>
+          </ul>
+        </li>-->
+      </ul>
+      </div><!-- /.navbar-collapse -->
+    </div><!-- /.container-fluid -->
+</nav>
+
             <section class="content">
                 
                 <audio src="song1.mp3"></audio>
@@ -89,13 +123,13 @@
                 </tbody>
           </table>
           
-        <div class="current-song-wrapper">
-        <img class="current-song-image">
-        <div>
-        <p class="current-song-name"></p>
-        <p class="current-song-album"></p>
-        </div>
-        </div>
+                <div class="current-song-wrapper">
+                <img class="current-song-image">
+                <div>
+                <p class="current-song-name"></p>
+                <p class="current-song-album"></p>
+                </div>
+                </div>
             </section>
             <footer>
                 <div class="controls">
